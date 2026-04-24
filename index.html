@@ -135,10 +135,6 @@
       align-items: start;
     }
 
-    /* Áreas (para poder reordenar en mobile) */
-    .cv-body > main { grid-area: main; }
-    .cv-body > .sidebar { grid-area: sidebar; }
-
     /* ─── SECTION TITLES ─── */
     .section-label {
       font-size: 0.65rem;
@@ -542,11 +538,14 @@
       .header-contact { align-items: flex-start; }
       .cv-body {
         grid-template-columns: 1fr;
+        /* Reordenar en mobile sin afectar escritorio */
         grid-template-areas:
           "sidebar"
           "main";
         gap: 2.5rem;
       }
+      .cv-body > main { grid-area: main; }
+      .cv-body > .sidebar { grid-area: sidebar; }
       .sidebar { position: static; }
       .profile-img-wrap {
         aspect-ratio: 1 / 1;
